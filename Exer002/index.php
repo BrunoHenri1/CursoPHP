@@ -9,9 +9,9 @@
     <main>
         <h1>Resultado</h1>
         <?php 
-            $nome = $_GET["nome"];
-            $ano = $_GET["ano"];
-            $sexo = $_GET["sexo"];
+            $nome = $_GET["nome"] ?? "nome";
+            $ano = $_GET["ano"] ?? date('Y');
+            $sexo = $_GET["sexo"] ?? "sexo";
 
             $idade = date('Y') - $ano;
 
