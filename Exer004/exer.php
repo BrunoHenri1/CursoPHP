@@ -8,7 +8,7 @@
 <body>
     <h1>Resultado</h1>
     <?php 
-        $nome = $_GET["nome"];
+        $nome = $_GET["nome"] ?? "";
         $ano = $_GET["idade"];
         $idade = date("Y") - $ano;
 
@@ -18,7 +18,12 @@
             echo "$msg voce pode votar e dirigir";
         }
          else  if ($idade >=16){
-            echo "$msg voce pode Votar, mas não dirigir";
+            echo "$msg Seu voto é opcional e voce ";
+            if ($idade < 18){
+                echo "não pode dirigir";
+            } else {
+                echo "pode dirigir";
+            }
         }
         else {
             echo "$msg voce não pode votar nem dirigir";
